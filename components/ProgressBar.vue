@@ -48,11 +48,7 @@ import gsap from "gsap"
         </NuxtLink>
       </div>
       <div class="flex justify-end">
-        <div
-          class="flex items-center justify-center w-40 border border-white rounded-xl py-4"
-        >
-          <p>Contact me</p>
-        </div>
+        <Button title="Contact me" custom-class="!w-36" />
       </div>
     </div>
   </div>

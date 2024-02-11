@@ -80,11 +80,7 @@
             />
           </div>
           <div>
-            <button
-              class="w-full text-center p-5 border-[1px] border-white rounded-xl"
-            >
-              Submit Message
-            </button>
+            <Button title="Send Message" />
           </div>
         </form>
       </div>

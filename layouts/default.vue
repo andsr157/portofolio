@@ -7,7 +7,7 @@ onMounted(() => {
   const scroolOptions = {
     trigger: ".hero__wrapper",
     start: "top top",
-    end: "+=" + 5000,
+    end: "+=" + 6000,
     scrub: true,
     pin: true,
   }
@@ -18,7 +18,7 @@ onMounted(() => {
   tl1.to(".main_text1", {
     transform: "translate3d(0px, -80px, 0px)",
     fontSize: 120,
-    duration: 0.5,
+    duration: 2,
   })
 
   tl1.to(
@@ -27,7 +27,7 @@ onMounted(() => {
       transform: "translate3d(-500px, 160px, 0px)",
       marginLeft: "20%",
       fontSize: 120,
-      duration: 0.5,
+      duration: 2,
     },
     "<"
   )
@@ -38,7 +38,7 @@ onMounted(() => {
       transform: "translate3d(200px, -50px, 0px)",
       width: 426,
       fontSize: 100,
-      duration: 0.5,
+      duration: 2,
     },
     "<"
   )
@@ -46,12 +46,14 @@ onMounted(() => {
     ".profile__photo",
     {
       marginLeft: 0,
+      duration: 2,
     },
     "<"
   )
 
   tl1.to(".content1", {
     transform: "translate(100vw, 0px)",
+    duration: 2,
   })
   tl1.to(
     ".profile__photo",
