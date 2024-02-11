@@ -1,15 +1,15 @@
 <script setup lang="ts">
+import { functions } from "@vueuse/core/metadata.mjs"
 import gsap from "gsap"
 
 onMounted(() => {
   // useSmoothScroll()
   const scroolOptions = {
-    trigger: ".hero__main_layer",
-    start: "top",
-    end: "+=" + 1600,
+    trigger: ".hero__wrapper",
+    start: "top top",
+    end: "+=" + 5000,
     scrub: true,
     pin: true,
-    markers: true,
   }
   const tl1 = gsap.timeline({
     scrollTrigger: scroolOptions,
@@ -17,7 +17,6 @@ onMounted(() => {
 
   tl1.to(".main_text1", {
     transform: "translate3d(0px, -80px, 0px)",
-    width: "100VW",
     fontSize: 120,
     duration: 0.5,
   })
@@ -25,13 +24,13 @@ onMounted(() => {
   tl1.to(
     ".main_text2",
     {
-      transform: "translate3d(-500px, 170px, 0px)",
+      transform: "translate3d(-500px, 160px, 0px)",
       marginLeft: "20%",
       fontSize: 120,
       duration: 0.5,
     },
     "<"
-  ) // Menggunakan "<" untuk memulai animasi .main_text2 pada saat yang sama dengan .main_text1
+  )
 
   tl1.to(
     ".main_video",
@@ -43,42 +42,60 @@ onMounted(() => {
     },
     "<"
   )
+  tl1.to(
+    ".profile__photo",
+    {
+      marginLeft: 0,
+    },
+    "<"
+  )
 
-  // gsap.to(".content1", {
-  //   x: 1550,
-  //   scrollTrigger: {
-  //     trigger: ".hero__wrapper",
-  //     start: "top",
-  //     end: "+=" + 1550,
-  //     pin: true,
-  //     scrub: true,
-  //     markers: true,
-  //   },
-  // })
+  tl1.to(".content1", {
+    transform: "translate(100vw, 0px)",
+  })
+  tl1.to(
+    ".profile__photo",
+    {
+      width: 376,
+      height: 520,
+      marginTop: -72,
+    },
+    "<50%"
+  )
 
-  // const tl2 = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".hero__wrapper",
-  //     start: "top",
-  //     end: "+=" + 1900,
-  //     scrub: true,
-  //     pin: true,
-  //   },
-  // })
+  tl1.to(
+    ".profile__desc",
+    {
+      marginRight: 0,
+      opacity: 1,
+      ease: "power1.inOut",
+    },
+    "<10%"
+  )
 
-  // tl2.to(".content1", {
-  //   x: 1550,
-  //   paused: true,
-  // })
-  // tl2.to(".content1", {
-  //   x: 1924,
-  //   paused: true,
-  // })
+  const texts = gsap.utils.toArray(".profile__desc span")
+  const colors = ["#000", "#fff", "#ddd"]
 
-  // tl.to(".second_text", {
-  //   scale: 1.5,
-  //   duration: 0.5, // Durasi animasi baru
-  // })
+  texts.forEach((text: any, i) => {
+    tl1.to(
+      text,
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.in",
+      },
+      "<30%"
+    )
+    tl1.to(
+      ".profile__photo",
+      {
+        backgroundColor: colors[i],
+        duration: 1,
+        ease: "power1",
+      },
+      "<90%"
+    )
+  })
 
   gsap.to(".service", {
     x: -2480,
@@ -88,7 +105,6 @@ onMounted(() => {
       end: "+=" + 2480,
       pin: true,
       scrub: true,
-      markers: true,
       toggleActions: "play none",
     },
   })
