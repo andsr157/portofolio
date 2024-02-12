@@ -21,7 +21,9 @@
           >
             <source src="../../public/logo.mp4" />
           </video>
-          <div class="main_text2 max-w-max text-right xl:absolute xl:right-0">
+          <div
+            class="main_text2 text-right w-full lg:max-w-max xl:absolute xl:right-0 pe-1 lg:pe-0"
+          >
             <h2 class="main_text2__firstname">ANDIKA</h2>
             <h2 class="">SATRIO NUGROHO</h2>
           </div>
