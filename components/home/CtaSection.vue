@@ -1,21 +1,21 @@
 <template>
   <section class="px-3 lg:px-10 pb-24">
-    <div class="grid grid-cols-2 gap-10">
+    <div class="lg:grid grid-cols-2 gap-10">
       <div class="flex flex-col w-full justify-between">
-        <div class="text-6xl lg:text-[90px]">
+        <div class="text-5xl lg:text-[90px]">
           <h2>LETS START</h2>
           <h2 class="text-right">CREATING</h2>
           <h2 class="text-center">TOGETHER</h2>
         </div>
         <div>
-          <div class="flex gap-1 items-center mb-10">
+          <div class="flex gap-1 items-center mb-10 mt-2 lg:mt-0">
             <div class="text-left font-NeueHaas">Say hi</div>
             <div><Icon name="system-uicons:minus" size="2em" /></div>
             <div class="text-left font-NeueHaas text-[#6d6d6d]">
               andikasatrio159@gmail.comx
             </div>
           </div>
-          <div class="flex flex-wrap lg:flex-nowrap gap-2 lg:gap-0 gap-x-6">
+          <div class="flex flex-wrap lg:flex-nowrap gap-3 lg:gap-0 lg:gap-x-6">
             <div>
               <span>Instagram</span>
               <span><Icon name="uit:arrow-up-right" size="1.5em" /></span>
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div
-        class="p-5 lg:p-[30px] border-[1px] border-opacity-20 border-white w-full rounded-3xl"
+        class="p-5 lg:p-[30px] border-[1px] border-opacity-20 border-white w-full rounded-3xl mt-6 lg:mt-0"
       >
         <form action="">
           <div class="mb-5">
