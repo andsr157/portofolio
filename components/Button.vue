@@ -45,7 +45,7 @@ const button_out = (event: MouseEvent) => {
   <button
     @mouseenter="button_in"
     @mouseleave="button_out"
-    class="w-full h-14 text-center border-[1px] border-white rounded-xl relative overflow-hidden"
+    class="w-full h-14 text-center border-[1px] border-white rounded-xl relative text-xs lg:text-base overflow-hidden"
     :class="customClass"
   >
     <div

@@ -7,9 +7,9 @@ const show = reactive({
 </script>
 
 <template>
-  <section class="px-10 py-80">
+  <section class="px-3 lg:px-10 py-56 lg:py-80">
     <div
-      class="text-[160px] relative flex flex-col items-center h-full text-[#1b1b1b]"
+      class="text-5xl lg:text-[160px] relative flex flex-col items-center h-full text-[#f9fdfe] lg:text-[#1b1b1b]"
     >
       <div>
         <a
@@ -35,7 +35,7 @@ const show = reactive({
           </div>
         </Transition>
       </div>
-      <div class="-mt-20">
+      <div>
         <a
           @mouseenter="show.pinterest = true"
           @mouseleave="show.pinterest = false"
@@ -56,15 +56,15 @@ const show = reactive({
           </div>
         </Transition>
       </div>
-      <div class="-mt-20">
+      <div>
         <a class="relative z-10 cursor-pointer hover:text-[#f9fdfe]">BEHANCE</a>
       </div>
-      <div class="-mt-20">
+      <div>
         <a class="realtive z-10 cursor-pointer hover:text-[#f9fdfe]"
           >TELEGRAM</a
         >
       </div>
-      <div class="-mt-20">
+      <div>
         <a class="relative z-10 cursor-pointer hover:text-[#f9fdfe]">YOUTUBE</a>
       </div>
       <!-- <div class="absolute w-full h-full -z-10 bg-red-400">

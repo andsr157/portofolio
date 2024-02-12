@@ -16,12 +16,12 @@ const props = withDefaults(
 
 <template>
   <div
-    class="p-[50px] w-[1024px] rounded-[48px] font-NeueHaas"
+    class="p-6 lg:p-[50px] w-full lg:w-[1024px] rounded-[48px] font-NeueHaas"
     :style="`background-color:${bgColor}`"
   >
-    <div class="flex mb-6 gap-x-24">
+    <div class="lg:flex mb-6 gap-x-24">
       <div
-        class="rounded-full w-[300px] h-[300px] overflow-hidden bg-white shrink-0"
+        class="rounded-full w-[150px] h-[150px] lg:w-[300px] lg:h-[300px] overflow-hidden bg-white lg:shrink-0 mx-auto lg:mx-0 mb-3 lg:mb-0"
       >
         <video
           autoplay
@@ -38,7 +38,7 @@ const props = withDefaults(
       </div>
       <div>
         <h3
-          class="text-3xl text-justify"
+          class="text-xs lg:text-3xl text-justify"
           :class="`${text === 'dark' ? 'text-black' : ''}`"
         >
           {{ desc }}
@@ -47,13 +47,13 @@ const props = withDefaults(
     </div>
     <div class="flex justify-between">
       <h2
-        class="text-[90px]"
+        class="text-[28px] lg:text-[90px]"
         :class="`${text === 'dark' ? 'text-black' : ''} `"
       >
         {{ title }}
       </h2>
       <h2
-        class="text-[90px] text-[#6d6d6d]"
+        class="text-[28px] lg:text-[90px] text-[#6d6d6d]"
         :class="`${text === 'white' ? 'text-[#f9fdfe]' : ''}`"
       >
         {{ number }}

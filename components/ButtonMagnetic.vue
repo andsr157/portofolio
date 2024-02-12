@@ -43,7 +43,7 @@ const releaseMagnetic = (e: any): void => {
 <template>
   <div class="button-box" @mousemove="magnetic" @mouseout="releaseMagnetic">
     <button
-      class="btn min-w-28 border border-white border-opacity-20 rounded-full bg-transparent py-4 px-10"
+      class="btn min-w-28 border border-white border-opacity-20 rounded-full bg-transparent p-4 lg:py-4 lg:px-10 text-xs lg:text-base"
     >
       {{ props.title }}
     </button>

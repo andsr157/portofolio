@@ -1,11 +1,11 @@
 <template>
-  <section class="px-10 pb-24">
+  <section class="px-3 lg:px-10 pb-24">
     <div class="grid grid-cols-2 gap-10">
       <div class="flex flex-col w-full justify-between">
-        <div class="text-[90px]">
+        <div class="text-6xl lg:text-[90px]">
           <h2>LETS START</h2>
-          <h2 class="text-right -mt-8">CREATING</h2>
-          <h2 class="text-center -mt-8">TOGETHER</h2>
+          <h2 class="text-right">CREATING</h2>
+          <h2 class="text-center">TOGETHER</h2>
         </div>
         <div>
           <div class="flex gap-1 items-center mb-10">
@@ -15,7 +15,7 @@
               andikasatrio159@gmail.comx
             </div>
           </div>
-          <div class="flex gap-x-6">
+          <div class="flex flex-wrap lg:flex-nowrap gap-2 lg:gap-0 gap-x-6">
             <div>
               <span>Instagram</span>
               <span><Icon name="uit:arrow-up-right" size="1.5em" /></span>
@@ -40,30 +40,34 @@
         </div>
       </div>
       <div
-        class="p-[30px] border-[1px] border-opacity-20 border-white w-full rounded-3xl"
+        class="p-5 lg:p-[30px] border-[1px] border-opacity-20 border-white w-full rounded-3xl"
       >
         <form action="">
           <div class="mb-5">
             <label for="" class="text-sm">Your Data</label>
-            <div class="flex flex-grow mt-4 gap-x-7">
+            <div
+              class="flex flex-col lg:flex-row flex-grow mt-4 gap-y-4 lg:gap-y-0 gap-x-7 text-xs llg:text-base"
+            >
               <input
                 name="name"
                 type="text"
                 placeholder="Name"
-                class="w-1/2 !bg-transparent p-5 border border-white border-opacity-20 rounded-xl"
+                class="lg:w-1/2 !bg-transparent p-5 border border-white border-opacity-20 rounded-xl"
               />
               <input
                 name="email"
                 type="text"
                 placeholder="Email"
-                class="w-1/2 !bg-transparent p-5 border border-white border-opacity-20 rounded-xl"
+                class="lg:w-1/2 !bg-transparent p-5 border border-white border-opacity-20 rounded-xl"
               />
             </div>
           </div>
 
           <div class="mb-5">
             <label for="" class="text-sm">You are interested in</label>
-            <div class="flex flex-wrap w-full mt-4 gap-x-7 gap-y-5 text-sm">
+            <div
+              class="flex flex-wrap w-full mt-4 gap-x-2 gap-y-3 lg:gap-x-7 lg:gap-y-5 text-sm"
+            >
               <ButtonMagnetic title="UX/UI Design" />
               <ButtonMagnetic title="Web Design" />
               <ButtonMagnetic title="Web Development" />
@@ -75,7 +79,7 @@
           <div class="mb-5">
             <input
               type="text"
-              class="border-[1px] border-white border-opacity-20 p-5 w-full bg-transparent rounded-xl"
+              class="border-[1px] border-white border-opacity-20 p-5 w-full bg-transparent rounded-xl text-xs llg:text-base"
               placeholder="Your question"
             />
           </div>
