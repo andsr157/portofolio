@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import gsap from "gsap"
 const props = withDefaults(
   defineProps<{
     title: string
