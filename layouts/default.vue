@@ -128,22 +128,20 @@ onMounted(() => {
         start: "top bottom",
         end: "bottom top",
         scrub: 1,
-        markers: true,
-      },
-    })
-
-    gsap.to(".progress-bar", {
-      width: "100%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#main-layer",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-        toggleActions: "play none",
       },
     })
   }
+  gsap.to(".progress-bar", {
+    width: "100%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#main-layer",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      toggleActions: "play none",
+    },
+  })
 })
 </script>
 
