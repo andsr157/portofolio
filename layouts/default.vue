@@ -121,6 +121,17 @@ onMounted(() => {
       },
     })
 
+    gsap.to(".project-image", {
+      y: -90,
+      scrollTrigger: {
+        trigger: ".project",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        markers: true,
+      },
+    })
+
     gsap.to(".progress-bar", {
       width: "100%",
       ease: "none",

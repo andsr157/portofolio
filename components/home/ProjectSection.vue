@@ -7,13 +7,49 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 const larger = breakpoints.greaterOrEqual("xl")
 
 const tween = ref<any | null>(null)
-onMounted(() => {
+const underline = ref<any | null>(null)
+
+const numSquares = ref<number>(0)
+const squareSideLength = ref<number>(0)
+
+const hoverIn = () => {}
+const hoverOut = () => {}
+
+onMounted(async () => {
+  await nextTick()
+  const imageContainer = document.querySelector(
+    ".imageContainer"
+  ) as HTMLElement
+  if (imageContainer) {
+    const imageContainerWidth = imageContainer?.offsetWidth
+    const imageContainerHeight = imageContainer?.offsetHeight
+    squareSideLength.value =
+      Math.min(imageContainerWidth, imageContainerHeight) / 8
+
+    const numSquaresWidth = Math.floor(
+      imageContainerWidth / squareSideLength.value
+    )
+    const numSquaresHeight = Math.floor(
+      imageContainerHeight / squareSideLength.value
+    )
+    numSquares.value = numSquaresHeight * numSquaresWidth
+  }
+
   tween.value = gsap.to(".add", {
     rotate: 360,
     duration: 1,
     ease: "power2.inOut",
     transformOrigin: "center center",
     paused: true,
+  })
+
+  underline.value = DATA_PROJECT.map((data, index) => {
+    return gsap.to(".line-" + index, {
+      width: "100%",
+      duration: 0.5,
+      ease: "power2.out",
+      paused: true,
+    })
   })
 })
 </script>
@@ -24,15 +60,35 @@ onMounted(() => {
       <h1 class="text-center text-6xl lg:text-[192px] font-medium">PROJECTS</h1>
     </div>
     <div class="lg:grid grid-cols-2 w-full gap-12 px-3">
-      <div class="w-full mb-10" v-for="data in DATA_PROJECT">
+      <div
+        class="w-full mb-10"
+        v-for="(data, index) in DATA_PROJECT"
+        @mouseenter="underline[index].play()"
+        @mouseleave="underline[index].reverse()"
+      >
         <div
-          class="max-h-[186px] cover lg:max-h-[430px] rounded-[50px] overflow-hidden"
+          class="max-h-[186px] lg:max-h-[430px] rounded-[50px] overflow-hidden bg-red-500 relative"
         >
-          <img :src="data.imgUrl" alt="" class="w-full lg:h-[430px]" />
+          <div class="imageContainer relative z-30 bg-blue-500">
+            <img
+              :src="data.imgUrl"
+              alt=""
+              class="project-image w-full -mt-3 h-[250px] lg:h-[600px] object-cover"
+            />
+            <div
+              class="w-full h-full absolute z-50 top-0 flex flex-wrap items-stretch"
+            >
+              <div
+                v-for="i in numSquares"
+                class="bg-black w-[calc(100%/8)] h-[calc(100%/8)] opacity-0 hover:opacity-100 transition-all duration-500 ease-in delay-200 hover:transition-none"
+              />
+            </div>
+          </div>
         </div>
         <div class="flex justify-between text-xl mt-6">
           <a href="#">
             {{ data.name }}
+            <div class="w-0 h-[2px] bg-white" :class="`line-` + index" />
           </a>
           <h4>
             {{ data.year }}
