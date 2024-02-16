@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full overflow-hidden">
-    <Navbar />
+  <div class="w-full">
+    <Navbar class="sticky top-0 z-50" />
     <section
-      class="font-NeueHaas text-[32px] xl:text-6xl px-3 xl:px-10 hero__wrapper lg:h-full"
+      class="font-NeueHaas mt-0 text-[32px] xl:text-6xl px-3 xl:px-10 hero__wrapper lg:h-full overflow-hidden"
     >
       <div class="content1">
         <div
@@ -19,7 +19,7 @@
             autoplay
             class="lg:w-[668px] h-fulll main_video xl:absolute xl:-z-10 xl:left-1/2 xl:-translate-x-1/2"
           >
-            <source src="../../public/logo.mp4" />
+            <source src="/logo.mp4" />
           </video>
           <div
             class="main_text2 text-right w-full lg:max-w-max xl:absolute xl:right-0 pe-1 lg:pe-0"
