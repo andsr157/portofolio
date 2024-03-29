@@ -13,6 +13,7 @@ onMounted(() => {
       end: "+=" + 6000,
       scrub: true,
       pin: true,
+      markers: false,
     }
     const tl1 = gsap.timeline({
       scrollTrigger: scroolOptions,

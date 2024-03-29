@@ -15,6 +15,7 @@
     "gsap": "^3.12.5",
     "nuxt": "^3.10.0",
     "nuxt-icon": "^0.6.8",
+    "nuxt3-leaflet": "^1.0.12",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
     "three": "^0.161.0",

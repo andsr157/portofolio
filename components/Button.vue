@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import gsap from "gsap"
 defineProps<{
-  title: string
+  title?: string
   customClass?: string
 }>()
 

@@ -6,12 +6,8 @@
     <div class="grid grid-cols-2 lg:grid-cols-3 items-center relative">
       <div class="text-[16px] hidden lg:block">Personal portofolio</div>
       <div class="lg:flex justify-center gap-16 text-[16px] hidden">
-        <NuxtLink>
-          <p>About me</p>
-        </NuxtLink>
-        <NuxtLink>
-          <p>My project</p>
-        </NuxtLink>
+        <CustomLink label="About me" to="/about" />
+        <CustomLink label="My Projects" to="/projects" />
       </div>
       <div class="block lg:hidden">
         <Icon name="uit:align-center-alt" size="2em" />

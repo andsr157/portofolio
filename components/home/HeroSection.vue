@@ -10,7 +10,7 @@
         >
           <div class="main_text1 w-full">
             <h2>HELLO I'M</h2>
-            <h2 class="-mt-3 lg:mt-0">WEB DESIGNER</h2>
+            <h2 class="-mt-3 lg:mt-0">WEB DEVELOPERS</h2>
           </div>
 
           <video
@@ -26,6 +26,7 @@
           >
             <h2 class="main_text2__firstname">ANDIKA</h2>
             <h2 class="">SATRIO NUGROHO</h2>
+            <Link label="linkku" />
           </div>
         </div>
       </div>

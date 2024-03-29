@@ -16,26 +16,11 @@
             </div>
           </div>
           <div class="flex flex-wrap lg:flex-nowrap gap-3 lg:gap-0 lg:gap-x-6">
-            <div>
-              <span>Instagram</span>
-              <span><Icon name="uit:arrow-up-right" size="1.5em" /></span>
-            </div>
-            <div>
-              <span>Facebook</span>
-              <span><Icon name="uit:arrow-up-right" size="1.5em" /></span>
-            </div>
-            <div>
-              <span>Linkedin</span>
-              <span><Icon name="uit:arrow-up-right" size="1.5em" /></span>
-            </div>
-            <div>
-              <span>Telegram</span>
-              <span><Icon name="uit:arrow-up-right" size="1.5em" /></span>
-            </div>
-            <div>
-              <span>Youtube</span>
-              <span><Icon name="uit:arrow-up-right" size="1.5em" /></span>
-            </div>
+            <div><CustomLink label="Github" with-arrow /></div>
+            <div><CustomLink label="Facebook" with-arrow /></div>
+            <div><CustomLink label="Linkedin" with-arrow /></div>
+            <div><CustomLink label="Telegram" with-arrow /></div>
+            <div><CustomLink label="Youtube" with-arrow /></div>
           </div>
         </div>
       </div>
