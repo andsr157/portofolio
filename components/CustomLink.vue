@@ -94,7 +94,7 @@ const reverseAnimation = () => {
 </script>
 
 <template>
-  <NuxtLink :to="props.to">
+  <a :href="props.to">
     <div
       class="flex"
       @mouseenter="startAnimation"
@@ -127,5 +127,5 @@ const reverseAnimation = () => {
         <Icon name="uit:arrow-up-right" size="1.5em" class="arrow-icon" />
       </div>
     </div>
-  </NuxtLink>
+  </a>
 </template>

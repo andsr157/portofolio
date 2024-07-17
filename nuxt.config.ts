@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['nuxt-icon', 'nuxt3-leaflet'],
+  modules: ['nuxt-icon', 'nuxt3-leaflet', "@nuxt/image"],
   build: {
     transpile: ['gsap'],
   },
@@ -14,5 +14,3 @@ export default defineNuxtConfig({
   },
 
 })
-
-

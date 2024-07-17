@@ -6,14 +6,16 @@
     <div class="grid grid-cols-2 lg:grid-cols-3 items-center relative">
       <div class="text-[16px] hidden lg:block">Personal portofolio</div>
       <div class="lg:flex justify-center gap-16 text-[16px] hidden">
-        <CustomLink label="About me" to="/about" />
-        <CustomLink label="My Projects" to="/projects" />
+        <!-- <CustomLink label="About me" to="/about" /> -->
+        <!-- <CustomLink label="My Projects" to="/projects" /> -->
       </div>
       <div class="block lg:hidden">
         <Icon name="uit:align-center-alt" size="2em" />
       </div>
       <div class="flex justify-end">
-        <Button title="Contact me" custom-class="lg:!w-36" />
+        <a href="mailto:andikasatrio159@gmail.com">
+          <Button title="Contact me" custom-class="lg:!w-36" />
+        </a>
       </div>
     </div>
   </div>

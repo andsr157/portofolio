@@ -47,8 +47,8 @@ onMounted(() => {
       ".main_video",
       {
         transform: "translate3d(200px, -50px, 0px)",
-        width: 426,
-        fontSize: 100,
+        width: 500,
+        fontSize: 120,
         duration: 2,
       },
       "<"
@@ -150,6 +150,13 @@ onMounted(() => {
   <slot />
 
   <footer class="sticky w-full bottom-5 z-50">
+    <a href="#main-layer">
+      <div
+        class="hover:transform hover:scale-110 hover:transition-transform hover:duration-150 w-12 h-12 rounded-full flex justify-start items-center right-10 bg-white absolute bottom-28 text-black"
+      >
+        <Icon name="bxs:up-arrow" size="26" class="max-w-max mx-auto" />
+      </div>
+    </a>
     <ProgressBar />
   </footer>
 </template>

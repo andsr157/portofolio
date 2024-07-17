@@ -1,75 +1,163 @@
 <script setup lang="ts">
 const show = reactive({
-  youtube: false,
-  behance: false,
-  pinterest: false,
+  webiste: false,
+  landing: false,
+  other: false,
 })
 </script>
 
 <template>
-  <section class="px-3 lg:px-10 py-56 lg:py-80">
+  <section class="px-3 lg:px-10 py-56 lg:py-80 flex flex-col gap-y-6">
     <div
       class="text-5xl lg:text-[160px] relative flex flex-col items-center h-full text-[#f9fdfe] lg:text-[#1b1b1b]"
     >
       <div>
         <a
-          @mouseenter="show.youtube = true"
-          @mouseleave="show.youtube = false"
+          @mouseenter="show.webiste = true"
+          @mouseleave="show.webiste = false"
           class="relative z-10 cursor-pointer hover:text-[#f9fdfe] !transition-colors !duration-300"
-          >DRIBBLE</a
+          >WEBSITE</a
         >
         <Transition name="fade">
-          <div v-show="show.youtube">
-            <div
-              class="absolute w-40 h-28 z-20 bg-red-300 top-12 left-80"
-            ></div>
-            <div class="absolute w-40 h-28 bg-red-300 -top-28 right-[500px]" />
-            <div
-              class="absolute w-40 h-28 z-20 bg-red-300 top-28 right-72"
-            ></div>
-            <div
-              class="absolute w-40 h-28 bg-red-300 bottom-72 right-1/2"
-            ></div>
-            <div class="absolute w-40 h-28 bg-red-300 bottom-28 left-72"></div>
-            <div class="absolute w-40 h-28 bg-red-300 bottom-20 right-96"></div>
+          <div v-show="show.webiste">
+            <div class="absolute w-40 h-28 z-20 bg-red-300 top-12 left-[16vw]">
+              <NuxtImg
+                src="/projects/img1.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute w-40 h-28 bg-red-300 -top-28 right-[500px]">
+              <NuxtImg
+                src="/projects/img2.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute w-40 h-28 z-20 bg-red-300 top-28 right-72">
+              <NuxtImg
+                src="/projects/img3.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute w-40 h-28 bg-red-300 bottom-72 right-1/2">
+              <NuxtImg
+                src="/projects/img5.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute w-40 h-28 bg-red-300 bottom-28 left-72">
+              <NuxtImg
+                src="/projects/img6.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute w-40 h-28 bg-red-300 bottom-20 right-96">
+              <NuxtImg
+                src="/projects/img9.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </Transition>
       </div>
+
       <div>
         <a
-          @mouseenter="show.pinterest = true"
-          @mouseleave="show.pinterest = false"
+          @mouseenter="show.landing = true"
+          @mouseleave="show.landing = false"
           class="relative z-10 cursor-pointer hover:text-[#f9fdfe]"
-          >PINTEREST</a
+          >LANDING</a
         >
         <Transition name="fade">
-          <div v-show="show.pinterest">
-            <div class="absolute w-40 h-28 bg-red-300 top-[45%] left-72"></div>
-            <div class="absolute w-40 h-28 bg-red-300 -top-10 left-[450px]" />
-            <div
-              class="absolute w-40 h-28 z-20 bg-red-300 top-32 right-80"
-            ></div>
-            <div class="absolute w-40 h-28 bg-red-300 bottom-80 right-96"></div>
-            <div
-              class="absolute w-40 h-28 bg-red-300 bottom-11 left-[40%]"
-            ></div>
+          <div v-show="show.landing">
+            <div class="absolute w-40 h-28 bg-red-300 top-[45%] left-72">
+              <NuxtImg
+                src="/projects/img4.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute w-40 h-28 bg-red-300 -top-10 left-[450px]">
+              <NuxtImg
+                src="/projects/img11.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute w-40 h-28 z-20 bg-red-300 top-64 right-80">
+              <NuxtImg
+                src="/projects/img8.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute w-40 h-28 bg-red-300 bottom-80 right-96">
+              <NuxtImg
+                src="/projects/img7.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute w-40 h-28 bg-red-300 bottom-11 left-[40%]">
+              <NuxtImg
+                src="/projects/img10.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </Transition>
       </div>
+
       <div>
-        <a class="relative z-10 cursor-pointer hover:text-[#f9fdfe]">BEHANCE</a>
-      </div>
-      <div>
-        <a class="realtive z-10 cursor-pointer hover:text-[#f9fdfe]"
-          >TELEGRAM</a
+        <a
+          @mouseenter="show.other = true"
+          @mouseleave="show.other = false"
+          class="relative z-10 cursor-pointer hover:text-[#f9fdfe]"
+          >OTHER</a
         >
+        <Transition name="fade">
+          <div v-show="show.other">
+            <div class="absolute w-40 h-28 bg-red-300 top-[70%] left-64">
+              <NuxtImg
+                format="webp"
+                quality="60"
+                src="/projects/img12.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div class="absolute w-40 h-28 bg-red-300 top-[50%] left-[40vw]">
+              <NuxtImg
+                format="webp"
+                quality="60"
+                src="/projects/img13.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div class="absolute w-40 h-28 bg-red-300 top-[80%] left-[50vw]">
+              <NuxtImg
+                format="webp"
+                quality="60"
+                src="/projects/img14.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div class="absolute w-40 h-28 bg-red-300 bottom-80 right-[400px]">
+              <NuxtImg
+                format="webp"
+                quality="60"
+                src="/projects/img16.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute w-40 h-28 bg-red-300 bottom-72 right-[60vw]">
+              <NuxtImg
+                format="webp"
+                quality="60"
+                src="/projects/img15.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </Transition>
       </div>
-      <div>
-        <a class="relative z-10 cursor-pointer hover:text-[#f9fdfe]">YOUTUBE</a>
-      </div>
-      <!-- <div class="absolute w-full h-full -z-10 bg-red-400">
-        
-      </div> -->
     </div>
   </section>
 </template>

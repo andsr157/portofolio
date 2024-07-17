@@ -41,18 +41,20 @@
             class="profile__desc text-6 text-[56px] max-w-[876px] -me-96 pe-8 lg:-mt-24 opacity-0 hidden lg:block"
           >
             <span class="opacity-20">
-              I love creating captivating and functional
+              Tidak ada yang lebih memuaskan bagi saya selain merancang
             </span>
             <span class="opacity-20"
-              >interfaces that evoke emotions and establish a conne</span
+              >antarmuka yang menarik dan fungsional, yang mampu menggugah
+              emosi</span
             >
-            <span class="opacity-20"
-              >-ction between the brand and the user.</span
-            >
+            <span class="opacity-20">
+              dan memberikan pengalaman pengguna yang luar biasa
+            </span>
           </div>
           <p class="text-2xl block lg:hidden mt-4 lg:mt-0">
-            I love creating captivating and functional interfaces that evoke
-            emotions and establish a connection between the brand and the user.
+            Tidak ada yang lebih memuaskan bagi saya selain merancang antarmuka
+            yang menarik dan fungsional, yang mampu menggugah emosi dan
+            memberikan pengalaman pengguna yang luar biasa
           </p>
         </div>
       </div>

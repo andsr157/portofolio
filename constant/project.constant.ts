@@ -1,18 +1,28 @@
 export const DATA_PROJECT = [
     {
-        name: 'project1',
-        year: '2021',
-        imgUrl: '/projects/img1.jpg'
+        name: 'barongsolo',
+        year: '2024',
+        imgUrl: '/projects/img4.png',
+        projectUrl: 'https://www.barongsolo.com',
     },
     {
-        name: 'project2',
-        year: '2021',
-        imgUrl: '/projects/img2.jpg'
+        name: 'Morpheme Commerce',
+        year: '2023',
+        imgUrl: '/projects/img3.png',
+        projectUrl: 'https://morpheme-commerce-uxnnkzi44q-et.a.run.app/',
     },
     {
-        name: 'project3',
-        year: '2021',
-        imgUrl: '/projects/img3.jpg'
+        name: 'Point Of Sales',
+        year: '2022',
+        imgUrl: '/projects/img2.png',
+        projectUrl: 'https://github.com/andsr157/POS',
     },
+    {
+        name: 'Kreafund',
+        year: '2023',
+        imgUrl: '/projects/img1.png',
+        projectUrl: 'https://github.com/andsr157/kreafund',
+    },
+
 
 ]

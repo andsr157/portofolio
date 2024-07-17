@@ -3,24 +3,54 @@
     <div class="lg:grid grid-cols-2 gap-10">
       <div class="flex flex-col w-full justify-between">
         <div class="text-5xl lg:text-[90px]">
-          <h2>LETS START</h2>
-          <h2 class="text-right">CREATING</h2>
-          <h2 class="text-center">TOGETHER</h2>
+          <h2>AYO MULAI</h2>
+          <h2 class="text-right">BUAT</h2>
+          <h2 class="text-center">BERSAMA</h2>
         </div>
         <div>
           <div class="flex gap-1 items-center mb-10 mt-2 lg:mt-0">
             <div class="text-left font-NeueHaas">Say hi</div>
             <div><Icon name="system-uicons:minus" size="2em" /></div>
             <div class="text-left font-NeueHaas text-[#6d6d6d]">
-              andikasatrio159@gmail.comx
+              andikasatrio159@gmail.com
             </div>
           </div>
           <div class="flex flex-wrap lg:flex-nowrap gap-3 lg:gap-0 lg:gap-x-6">
-            <div><CustomLink label="Github" with-arrow /></div>
-            <div><CustomLink label="Facebook" with-arrow /></div>
-            <div><CustomLink label="Linkedin" with-arrow /></div>
-            <div><CustomLink label="Telegram" with-arrow /></div>
-            <div><CustomLink label="Youtube" with-arrow /></div>
+            <div>
+              <CustomLink
+                label="Github"
+                to="https://github.com/andsr157"
+                with-arrow
+              />
+            </div>
+            <div>
+              <CustomLink
+                label="Facebook"
+                to="https://www.facebook.com/profile.php?id=100011086082150&mibextid=ZbWKwL"
+                with-arrow
+              />
+            </div>
+            <div>
+              <CustomLink
+                label="Linkedin"
+                to="https://www.linkedin.com/in/andika-satrio-nugroho/"
+                with-arrow
+              />
+            </div>
+            <div>
+              <CustomLink
+                label="Telegram"
+                to="https://t.me/andsr157"
+                with-arrow
+              />
+            </div>
+            <div>
+              <CustomLink
+                label="Email"
+                to="mailto:andikasatrio159@gmail.com"
+                with-arrow
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -57,7 +87,7 @@
               <ButtonMagnetic title="Web Design" />
               <ButtonMagnetic title="Web Development" />
               <ButtonMagnetic title="Website Creation" />
-              <ButtonMagnetic title="Animation" />
+              <ButtonMagnetic title="Landing Page" />
               <ButtonMagnetic title="Other" />
             </div>
           </div>

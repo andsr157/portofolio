@@ -12,10 +12,11 @@ const underline = ref<any | null>(null)
 const numSquares = ref<number>(0)
 const squareSideLength = ref<number>(0)
 
-const hoverIn = () => {}
-const hoverOut = () => {}
+const currentCursor = ref(0)
+const projects = ref<any>([])
 
 onMounted(async () => {
+  await fetchData()
   await nextTick()
   const imageContainer = document.querySelector(
     ".imageContainer"
@@ -43,7 +44,24 @@ onMounted(async () => {
     paused: true,
   })
 
-  underline.value = DATA_PROJECT.map((data, index) => {
+  updateUnderlines()
+})
+
+const fetchData = async () => {
+  const start = currentCursor.value
+  const end = start + 3
+
+  projects.value.push(...DATA_PROJECT.slice(start, end))
+
+  currentCursor.value = end < DATA_PROJECT.length ? end : DATA_PROJECT.length
+
+  await nextTick()
+  animateNewProjects(start, end)
+  updateUnderlines()
+}
+
+const updateUnderlines = () => {
+  underline.value = projects.value.map((data: any, index: number) => {
     return gsap.to(".line-" + index, {
       width: "100%",
       duration: 0.5,
@@ -51,7 +69,23 @@ onMounted(async () => {
       paused: true,
     })
   })
-})
+}
+
+const animateNewProjects = (start: number, end: number) => {
+  DATA_PROJECT.slice(start, end).forEach((_, index) => {
+    const elementIndex = start + index
+    const element = document.querySelector(
+      `.project-${elementIndex}`
+    ) as HTMLElement
+    if (element) {
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+      )
+    }
+  })
+}
 </script>
 
 <template>
@@ -60,47 +94,29 @@ onMounted(async () => {
       <h1 class="text-center text-6xl lg:text-[192px] font-medium">PROJECTS</h1>
     </div>
     <div class="lg:grid grid-cols-2 w-full gap-12 px-3">
-      <div
+      <CardProject
         class="w-full mb-10"
-        v-for="(data, index) in DATA_PROJECT"
+        :class="'project-' + index"
+        v-for="(data, index) in projects"
+        :index="index"
+        :name="data.name"
+        :year="data.year"
+        :url="data.projectUrl"
+        :image="data.imgUrl"
         @mouseenter="underline[index].play()"
         @mouseleave="underline[index].reverse()"
       >
-        <div
-          class="max-h-[186px] lg:max-h-[430px] rounded-[50px] overflow-hidden bg-red-500 relative"
-        >
-          <div class="imageContainer relative z-30 bg-blue-500">
-            <img
-              :src="data.imgUrl"
-              alt=""
-              class="project-image w-full -mt-3 h-[250px] lg:h-[600px] object-cover"
-            />
-            <div
-              class="w-full h-full absolute z-50 top-0 flex flex-wrap items-stretch"
-            >
-              <div
-                v-for="i in numSquares"
-                class="bg-black w-[calc(100%/8)] h-[calc(100%/8)] opacity-0 hover:opacity-100 transition-all duration-500 ease-in delay-200 hover:transition-none"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="flex justify-between text-xl mt-6">
-          <a href="#">
-            {{ data.name }}
-            <div class="w-0 h-[2px] bg-white" :class="`line-` + index" />
-          </a>
-          <h4>
-            {{ data.year }}
-          </h4>
-        </div>
-      </div>
+      </CardProject>
+
       <div
+        @click="fetchData()"
         class="w-full lg:max-h-[430px] text-xl border border-white border-opacity-20 rounded-[50px]"
         @mouseenter="tween.play()"
         @mouseleave="tween.reverse()"
       >
-        <div class="flex flex-col h-full items-center justify-center pt-5 pb-9">
+        <div
+          class="flex flex-col h-[350px] md:h-[400px] lg:h-[400px] items-center justify-center pt-5 pb-9"
+        >
           <div class="relative">
             <Icon
               name="mdi-light:plus"
@@ -108,7 +124,7 @@ onMounted(async () => {
               class="add !max-w-max !max-h-max"
             />
           </div>
-          <h4>Your Project</h4>
+          <h4>More Project</h4>
         </div>
       </div>
     </div>

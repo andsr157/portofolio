@@ -17,10 +17,10 @@ const larger = breakpoints.greaterOrEqual("xl")
       <div class="lg:grid grid-cols-2 service">
         <div class="flex flex-row lg:flex-col justify-between mb-4 lg:mb-0">
           <h2 class="text-2xl lg:text-6xl">
-            How can I <br />
-            assist you?
+            Pengembangan <br />
+            Web Frontend
           </h2>
-          <div>
+          <div class="mb-16">
             <Icon
               name="material-symbols:subdirectory-arrow-right"
               :size="`${larger === true ? '6em' : '4em'}`"
@@ -32,19 +32,18 @@ const larger = breakpoints.greaterOrEqual("xl")
         >
           <div>
             <ServicesCard
-              title="Design"
-              desc="THROUGH WEB DEVELOPMENT, WE TRANSFORM PROJECTS INTO FUNCTIONAL,
-              INTERACTIVE WEBSITES THAT DELIVER EXCEPTIONAL PERFORMANCE."
+              title="Desain UI/UX"
+              desc="Rancang antarmuka pengguna yang menarik dan intuitif untuk memastikan 
+              pengalaman pengguna yang optimal."
               number="01"
               video-url="/service1.mp4"
             />
           </div>
           <div>
             <ServicesCard
-              title="Design"
-              desc="THROUGH WEB DEVELOPMENT, WE TRANSFORM PROJECTS INTO FUNCTIONAL,
-              INTERACTIVE WEBSITES THAT DELIVER EXCEPTIONAL PERFORMANCE."
-              number="01"
+              title="Pengembangan "
+              desc="Kembangkan situs web yang responsif dan fungsional dengan menggunakan teknologi terbaru."
+              number="02"
               bg-color="#f9fdfe"
               text="dark"
               video-url="/service2.mp4"
@@ -52,10 +51,10 @@ const larger = breakpoints.greaterOrEqual("xl")
           </div>
           <div class="lg:pe-10">
             <ServicesCard
-              title="Design"
-              desc="THROUGH WEB DEVELOPMENT, WE TRANSFORM PROJECTS INTO FUNCTIONAL,
-              INTERACTIVE WEBSITES THAT DELIVER EXCEPTIONAL PERFORMANCE."
-              number="01"
+              title="Optimisasi"
+              class="!font-medium"
+              desc="Optimalkan performa dan SEO situs web untuk waktu muat yang cepat dan pengalaman pengguna yang lancar."
+              number="03"
               bg-color="#b5ede5"
               text="white"
               video-url="/service3.mp4"
