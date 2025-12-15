@@ -19,6 +19,14 @@ onMounted(() => {
       scrollTrigger: scroolOptions,
     })
 
+    // Set photo1 di awal sebelum animasi dimulai (layer 1 sudah visible)
+    gsap.set(".photo-layer-1", {
+      opacity: 1,
+    })
+    gsap.set([".photo-layer-2", ".photo-layer-3"], {
+      opacity: 0,
+    })
+
     tl1.to(".main_text1", {
       transform: "translate3d(0px, -80px, 0px)",
       fontSize: 120,
@@ -87,7 +95,7 @@ onMounted(() => {
     )
 
     const texts = gsap.utils.toArray(".profile__desc span")
-    const colors = ["#000", "#fff", "#ddd"]
+    const photoLayers = [".photo-layer-2", ".photo-layer-3"] // Hanya photo2 dan photo3, tidak kembali ke photo1
 
     texts.forEach((text: any, i) => {
       tl1.to(
@@ -99,15 +107,30 @@ onMounted(() => {
         },
         "<30%"
       )
-      tl1.to(
-        ".profile__photo",
-        {
-          backgroundColor: colors[i],
-          duration: 1,
-          ease: "power1",
-        },
-        "<90%"
-      )
+      
+      // Hanya animate jika ada layer yang sesuai untuk span ini
+      if (photoLayers[i]) {
+        // Hide all layers first, then show the target layer
+        tl1.to(
+          [".photo-layer-1", ".photo-layer-2", ".photo-layer-3"],
+          {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power1.inOut",
+          },
+          "<90%"
+        )
+        
+        tl1.to(
+          photoLayers[i],
+          {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power1.inOut",
+          },
+          "<0.1"
+        )
+      }
     })
 
     gsap.to(".service", {
@@ -119,6 +142,7 @@ onMounted(() => {
         pin: true,
         scrub: true,
         toggleActions: "play none",
+        // Pastikan animasi tidak keluar dari viewport
       },
     })
 
@@ -147,16 +171,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <slot />
+  <div class="max-w-[1440px] mx-auto">
+    <slot />
+  </div>
 
   <footer class="sticky w-full bottom-5 z-50">
-    <a href="#main-layer">
-      <div
-        class="hover:transform hover:scale-110 hover:transition-transform hover:duration-150 w-12 h-12 rounded-full flex justify-start items-center right-10 bg-white absolute bottom-28 text-black"
-      >
-        <Icon name="bxs:up-arrow" size="26" class="max-w-max mx-auto" />
-      </div>
-    </a>
-    <ProgressBar />
+    <div class="max-w-[1440px] mx-auto relative">
+      <a href="#main-layer">
+        <div
+          class="hover:transform hover:scale-110 hover:transition-transform hover:duration-150 w-12 h-12 rounded-full flex justify-start items-center right-10 bg-white absolute bottom-28 text-black"
+        >
+          <Icon name="bxs:up-arrow" size="26" class="max-w-max mx-auto" />
+        </div>
+      </a>
+      <ProgressBar />
+    </div>
   </footer>
 </template>

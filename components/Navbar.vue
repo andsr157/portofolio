@@ -16,7 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header>
+  <div class="max-w-[1600px] mx-auto">
     <div class="grid xl:grid-cols-3 py-6 lg:py-8 px-10 text-base items-center">
       <div class="text-left font-NeueHaas hidden lg:block">Andsr157</div>
       <div class="text-center font-NeueHaas">{{ currentTime }}</div>
@@ -28,5 +28,5 @@ onMounted(() => {
         </div>
       </div>
     </div>
-  </header>
+  </div>
 </template>

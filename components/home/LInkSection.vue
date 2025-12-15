@@ -7,7 +7,7 @@ const show = reactive({
 </script>
 
 <template>
-  <section class="px-3 lg:px-10 py-56 lg:py-80 flex flex-col gap-y-6">
+  <section class="px-3 lg:px-10 py-56 lg:py-80 flex flex-col gap-y-6 max-w-[1600px] mx-auto">
     <div
       class="text-5xl lg:text-[160px] relative flex flex-col items-center h-full text-[#f9fdfe] lg:text-[#1b1b1b]"
     >

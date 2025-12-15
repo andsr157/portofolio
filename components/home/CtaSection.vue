@@ -1,5 +1,5 @@
 <template>
-  <section class="px-3 lg:px-10 pb-24">
+  <section class="px-3 lg:px-10 pb-24 max-w-[1600px] mx-auto">
     <div class="lg:grid grid-cols-2 gap-10">
       <div class="flex flex-col w-full justify-between">
         <div class="text-5xl lg:text-[90px]">

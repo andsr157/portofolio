@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full">
+  <section class="w-full max-w-[1600px] mx-auto">
     <Navbar class="sticky top-0 z-50" />
-    <section
+    <div
       class="font-NeueHaas mt-0 text-[32px] xl:text-6xl px-3 xl:px-10 hero__wrapper lg:h-full overflow-hidden"
     >
       <div class="content1">
@@ -35,8 +35,17 @@
       >
         <div class="lg:flex items-center lg:h-full justify-between">
           <div
-            class="profile__photo lg:-ms-96 w-40 h-56 bg-red-300 lg:mt-40 shrink-0 mx-auto lg:mx-0"
-          ></div>
+            class="profile__photo lg:-ms-96 w-40 h-56 lg:mt-40 shrink-0 mx-auto lg:mx-0 relative"
+          >
+            <!-- Multiple image layers for smooth crossfade -->
+            <div class="photo-layer photo-layer-1 absolute inset-0"></div>
+            <div
+              class="photo-layer photo-layer-2 absolute inset-0 opacity-0"
+            ></div>
+            <div
+              class="photo-layer photo-layer-3 absolute inset-0 opacity-0"
+            ></div>
+          </div>
           <div
             class="profile__desc text-6 text-[56px] max-w-[876px] -me-96 pe-8 lg:-mt-24 opacity-0 hidden lg:block"
           >
@@ -58,6 +67,31 @@
           </p>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
+
+<style scoped>
+.profile__photo {
+  background-color: transparent;
+}
+
+.photo-layer {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.3s ease;
+}
+
+.photo-layer-1 {
+  background-image: url("/profile/photo1.png");
+}
+
+.photo-layer-2 {
+  background-image: url("/profile/photo2.png");
+}
+
+.photo-layer-3 {
+  background-image: url("/profile/photo3.png");
+}
+</style>
