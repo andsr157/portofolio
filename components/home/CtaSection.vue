@@ -1,3 +1,45 @@
+<script setup lang="ts">
+const form = reactive({
+  name: "",
+  email: "",
+  interests: [] as string[],
+  question: "",
+});
+
+const interestOptions = [
+  "UX/UI Design",
+  "Web Design",
+  "Web Development",
+  "Website Creation",
+  "Landing Page",
+  "Other",
+];
+
+const toggleInterest = (interest: string) => {
+  const index = form.interests.indexOf(interest);
+  if (index === -1) {
+    form.interests.push(interest);
+  } else {
+    form.interests.splice(index, 1);
+  }
+};
+
+const sendMessage = () => {
+  const subject = encodeURIComponent(`Contact from ${form.name}`);
+  const body = encodeURIComponent(
+    `Name: ${form.name}\n` +
+      `Email: ${form.email}\n` +
+      `Interested in: ${form.interests.join(", ")}\n\n` +
+      `Message:\n${form.question}`
+  );
+
+  window.open(
+    `mailto:andikasatrio159@gmail.com?subject=${subject}&body=${body}`,
+    "_blank"
+  );
+};
+</script>
+
 <template>
   <section class="px-3 lg:px-10 pb-24 max-w-[1600px] mx-auto">
     <div class="lg:grid grid-cols-2 gap-10">
@@ -57,21 +99,23 @@
       <div
         class="p-5 lg:p-[30px] border-[1px] border-opacity-20 border-white w-full rounded-3xl mt-6 lg:mt-0"
       >
-        <form action="">
+        <form @submit.prevent="sendMessage">
           <div class="mb-5">
             <label for="" class="text-sm">Your Data</label>
             <div
               class="flex flex-col lg:flex-row flex-grow mt-4 gap-y-4 lg:gap-y-0 gap-x-7 text-xs llg:text-base"
             >
               <input
+                v-model="form.name"
                 name="name"
                 type="text"
                 placeholder="Name"
                 class="lg:w-1/2 !bg-transparent p-5 border border-white border-opacity-20 rounded-xl"
               />
               <input
+                v-model="form.email"
                 name="email"
-                type="text"
+                type="email"
                 placeholder="Email"
                 class="lg:w-1/2 !bg-transparent p-5 border border-white border-opacity-20 rounded-xl"
               />
@@ -83,23 +127,24 @@
             <div
               class="flex flex-wrap w-full mt-4 gap-x-2 gap-y-3 lg:gap-x-7 lg:gap-y-5 text-sm"
             >
-              <ButtonMagnetic title="UX/UI Design" />
-              <ButtonMagnetic title="Web Design" />
-              <ButtonMagnetic title="Web Development" />
-              <ButtonMagnetic title="Website Creation" />
-              <ButtonMagnetic title="Landing Page" />
-              <ButtonMagnetic title="Other" />
+              <ButtonMagnetic
+                v-for="interest in interestOptions"
+                :key="interest"
+                :title="interest"
+                :selected="form.interests.includes(interest)"
+                @click="toggleInterest(interest)"
+              />
             </div>
           </div>
           <div class="mb-5">
-            <input
-              type="text"
-              class="border-[1px] border-white border-opacity-20 p-5 w-full bg-transparent rounded-xl text-xs llg:text-base"
+            <textarea
+              v-model="form.question"
+              class="border-[1px] border-white border-opacity-20 p-5 w-full bg-transparent rounded-xl text-xs llg:text-base min-h-[120px] resize-none"
               placeholder="Your question"
-            />
+            ></textarea>
           </div>
           <div>
-            <Button title="Send Message" />
+            <Button title="Send Message" type="submit" />
           </div>
         </form>
       </div>

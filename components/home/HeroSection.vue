@@ -6,7 +6,7 @@
     >
       <div class="content1">
         <div
-          class="xl:flex relative items-center hero__main_layer h-[80vh] lg:pb-10 overflow-hidden"
+          class="xl:flex relative items-center hero__main_layer h-[50vh] lg:h-[80vh] lg:pb-10 overflow-hidden"
         >
           <div class="main_text1 w-full">
             <h2>HELLO I'M</h2>
@@ -84,7 +84,7 @@
 }
 
 .photo-layer-1 {
-  background-image: url("/profile/photo1.png");
+  background-image: url("/profile/photo3.png");
 }
 
 .photo-layer-2 {
@@ -93,5 +93,11 @@
 
 .photo-layer-3 {
   background-image: url("/profile/photo3.png");
+}
+
+@media (min-width: 1024px) {
+  .photo-layer-1 {
+    background-image: url("/profile/photo1.png");
+  }
 }
 </style>
